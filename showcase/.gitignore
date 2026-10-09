@@ -1,0 +1,7 @@
+node_modules
+out
+build
+
+# Licensed house fonts — not redistributed in this public repo (see README → Fonts)
+public/fonts/*.otf
+public/fonts/*.ttf
