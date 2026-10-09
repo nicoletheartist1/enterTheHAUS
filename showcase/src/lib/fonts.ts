@@ -1,15 +1,15 @@
 import { continueRender, delayRender, staticFile } from "remotion";
 import { loadFont } from "@remotion/fonts";
 
-const faces: { family: string; file: string; weight: string; style?: string }[] = [
-  { family: "Cormorant", file: "cormorant-500.woff2", weight: "500" },
-  { family: "Cormorant", file: "cormorant-600.woff2", weight: "600" },
-  { family: "Cormorant", file: "cormorant-500-italic.woff2", weight: "500", style: "italic" },
-  { family: "Poppins", file: "poppins-300.woff2", weight: "300" },
-  { family: "Poppins", file: "poppins-400.woff2", weight: "400" },
-  { family: "Poppins", file: "poppins-500.woff2", weight: "500" },
-  { family: "Poppins", file: "poppins-600.woff2", weight: "600" },
-  { family: "Space Mono", file: "spacemono-400.woff2", weight: "400" },
+/**
+ * House typefaces (same files as crystal-arc-craft/remotion/public/fonts).
+ * Only these three cuts exist, so components request exactly 700 / 400 / 300 —
+ * never an in-between weight or italic, which the browser would fake.
+ */
+const faces: { family: string; file: string; weight: string; format: "opentype" | "truetype" }[] = [
+  { family: "Seasons", file: "seasons.ttf", weight: "700", format: "truetype" }, // The Seasons Bold
+  { family: "Agrandir", file: "agrandir.otf", weight: "400", format: "opentype" }, // Agrandir Regular
+  { family: "Agrandir", file: "agrandir-light.otf", weight: "300", format: "opentype" }, // Agrandir Grand Light
 ];
 
 // Block every frame until all faces are registered so headless renders never flash fallback type.
@@ -21,8 +21,8 @@ Promise.all(
       family: f.family,
       url: staticFile(`fonts/${f.file}`),
       weight: f.weight,
-      style: f.style ?? "normal",
-      format: "woff2",
+      style: "normal",
+      format: f.format,
     }),
   ),
 )

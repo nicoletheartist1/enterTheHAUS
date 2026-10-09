@@ -18,7 +18,7 @@ export const Outro: React.FC = () => {
         <div style={fade(0)}><MetallicBadge>theHAUS. | VISION</MetallicBadge></div>
         <div className="flex flex-col" style={{ gap: 28 }}>
           <KineticTitle text="Where God Leads." fontSize={96} delay={4} />
-          <KineticTitle text="Where Excellence Lives." fontSize={96} delay={10} italic weight={500} color={C.terracotta} />
+          <KineticTitle text="Where Excellence Lives." fontSize={96} delay={10} color={C.terracotta} />
           <div className="font-sans" style={{ ...fade(18), fontSize: 24, fontWeight: 300, color: C.slate, lineHeight: 1.5, maxWidth: 560 }}>
             Eleven platforms. One standard. Let’s build what you were called to establish.
           </div>

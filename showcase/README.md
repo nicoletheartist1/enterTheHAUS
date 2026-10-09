@@ -3,6 +3,19 @@
 A Remotion reel presenting 11 digital platforms in a dual-column editorial layout.
 **1920×1080 · 30fps · 1665 frames (55.5s)**
 
+## Fonts
+
+The reel uses the house typefaces: **The Seasons Bold** (headlines, monograms) and
+**Agrandir** Regular + Grand Light (statements, labels, chips). They're licensed fonts, so
+they are git-ignored here and not published with this public repo. Copy them in before you render:
+
+```bash
+cp ../../crystal-arc-craft/remotion/public/fonts/{seasons.ttf,agrandir.otf,agrandir-light.otf} public/fonts/
+```
+
+(Adjust the path to wherever `crystal-arc-craft` is checked out.) `src/lib/fonts.ts` loads them
+through `@remotion/fonts` and holds every frame with `delayRender` until they're ready.
+
 ## Commands
 
 ```bash
@@ -39,7 +52,7 @@ src/
     BrandPlate.tsx                 typographic plate for projects without a capture
   data/projects.ts                 ← all copy, chips, layouts and asset sizes live here
   lib/tokens.ts                    locked palette, grid geometry, easing, spring, timing
-  lib/fonts.ts                     @remotion/fonts loadFont + delayRender
+  lib/fonts.ts                     Seasons + Agrandir via @remotion/fonts + delayRender
 ```
 
 **Scene timing (135 frames):** 0–24 entrance (spring `stiffness 120 / damping 14`) ·

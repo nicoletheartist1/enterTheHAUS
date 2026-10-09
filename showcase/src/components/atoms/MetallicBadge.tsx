@@ -40,7 +40,7 @@ export const MetallicBadge: React.FC<{
           alignItems: "center",
           gap: 12,
           fontSize: 15,
-          fontWeight: 500,
+          fontWeight: 400,
           letterSpacing: "0.2em",
           color: C.ink,
           background: solid ? "transparent" : C.canvas,

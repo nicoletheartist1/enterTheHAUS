@@ -27,7 +27,7 @@ export const Intro: React.FC = () => {
       <div style={{ position: "absolute", left: SAFE, top: 250, width: W - SAFE * 2, opacity: 1 - out, transform: `translateY(${-out * 30}px)` }}>
         <KineticTitle text="theHAUS. | VISION" fontSize={168} delay={4} stagger={4} />
         <div style={{ height: 3, width: (W - SAFE * 2) * rule, backgroundImage: COPPER, margin: "36px 0 30px" }} />
-        <KineticTitle text="Where God Leads. Where Excellence Lives." fontSize={54} delay={20} stagger={2} italic weight={500} color={C.terracotta} />
+        <KineticTitle text="Where God Leads. Where Excellence Lives." fontSize={54} delay={20} stagger={2} color={C.terracotta} />
       </div>
       <div style={{ position: "absolute", left: SAFE, right: SAFE, bottom: SAFE + 20 }} className="flex items-end justify-between">
         <div className="font-sans" style={{ ...fade(26), fontSize: 26, fontWeight: 300, color: C.cream, maxWidth: 900, lineHeight: 1.4 }}>

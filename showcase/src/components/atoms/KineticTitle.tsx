@@ -6,7 +6,7 @@ import { C } from "../../lib/tokens";
 /**
  * Word-by-word masked rise. Each word sits in its own overflow-hidden slot and
  * springs up from below the baseline, staggered by `stagger` frames.
- * Mask padding is generous so descenders and italics are never clipped.
+ * Mask padding is generous so descenders are never clipped.
  */
 export const KineticTitle: React.FC<{
   text: string;
@@ -14,11 +14,10 @@ export const KineticTitle: React.FC<{
   delay?: number;
   stagger?: number;
   color?: string;
-  italic?: boolean;
   weight?: number;
   lineHeight?: number;
   className?: string;
-}> = ({ text, fontSize, delay = 0, stagger = 3, color = C.ink, italic, weight = 600, lineHeight = 1.0, className }) => {
+}> = ({ text, fontSize, delay = 0, stagger = 3, color = C.ink, weight = 700, lineHeight = 1.0, className }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const words = text.split(" ");
@@ -30,7 +29,6 @@ export const KineticTitle: React.FC<{
         lineHeight,
         color,
         fontWeight: weight,
-        fontStyle: italic ? "italic" : "normal",
         letterSpacing: "-0.01em",
         display: "flex",
         flexWrap: "wrap",

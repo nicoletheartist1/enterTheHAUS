@@ -70,7 +70,7 @@ export const ProjectGrid: React.FC<{ projects: Project[]; width: number; delay?:
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 34,
-                      fontWeight: 600,
+                      fontWeight: 700,
                       color: C.ink,
                     }}
                   >

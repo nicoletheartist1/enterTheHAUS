@@ -56,14 +56,16 @@ export const BrandPlate: React.FC<{
           style={{
             fontSize: mono,
             lineHeight: 0.9,
-            fontWeight: 600,
+            fontWeight: 700,
+            // Seasons kerns VV into a "W" — open the pair up so monograms read as letters.
+            letterSpacing: "0.08em",
             backgroundImage: `linear-gradient(105deg, rgba(255,233,210,0) ${shimmer * 140 - 30}%, rgba(255,247,238,0.9) ${
               shimmer * 140 - 15
             }%, rgba(255,233,210,0) ${shimmer * 140}%), ${COPPER}`,
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
-            padding: "0 0.05em 0.06em",
+            padding: "0 0 0.06em 0.08em",
           }}
         >
           {monogram}
@@ -71,7 +73,7 @@ export const BrandPlate: React.FC<{
         {!compact && (
           <>
             <div style={{ width: 120, height: 2, backgroundImage: COPPER, margin: `${height * 0.04}px 0` }} />
-            <div className="font-display" style={{ fontSize: Math.round(height * 0.085), color: C.brown, fontWeight: 500 }}>
+            <div className="font-display" style={{ fontSize: Math.round(height * 0.085), color: C.brown, fontWeight: 700 }}>
               {title}
             </div>
           </>

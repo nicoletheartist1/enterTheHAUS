@@ -236,7 +236,7 @@ const CopyColumn: React.FC<{ project: Project; index: number }> = ({ project, in
         <KineticTitle text={project.title} fontSize={titleSize} delay={6} lineHeight={0.98} />
         <div
           className="font-sans"
-          style={{ ...fade(12), fontSize: 28, lineHeight: 1.32, fontWeight: 500, color: C.ink, maxWidth: 600 }}
+          style={{ ...fade(12), fontSize: 28, lineHeight: 1.32, fontWeight: 400, color: C.ink, maxWidth: 600 }}
         >
           {project.statement}
         </div>
