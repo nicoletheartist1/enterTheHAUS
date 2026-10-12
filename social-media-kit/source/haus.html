@@ -1,0 +1,101 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="devices.css">
+<style>
+:root { --bg:#040404; --gold:#C9A84C; --gold-lt:#E2C06A; --white:#F2F2F2; --silver:#C0C0C0;
+  --c1:#DC143C; --c2:#C2185B; --c3:#C9A84C; --c4:#50C878; --c5:#1A3C8F; --c6:#89CFF0; --c7:#6F00FF; }
+.cv { background: radial-gradient(ellipse at 70% 30%, #17130a 0%, var(--bg) 60%); color: var(--white); font-family: 'Poppins', sans-serif; }
+.spectrum { position: absolute; top: 0; left: 0; right: 0; height: 8px; background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5), var(--c6), var(--c7)); }
+.br { position: absolute; width: 70px; height: 70px; border-color: var(--gold); border-style: solid; opacity: .6; }
+.br.tl { top: 40px; left: 40px; border-width: 3px 0 0 3px; } .br.tr { top: 40px; right: 40px; border-width: 3px 3px 0 0; }
+.br.bl { bottom: 40px; left: 40px; border-width: 0 0 3px 3px; } .br.brr { bottom: 40px; right: 40px; border-width: 0 3px 3px 0; }
+.kicker { font-weight: 600; letter-spacing: .42em; text-transform: uppercase; color: var(--gold); font-size: 20px; }
+.word { display: inline-flex; align-items: flex-start; position: relative; }
+.word .the { position: absolute; top: -30px; left: 6px; font-weight: 300; letter-spacing: .5em; font-size: 26px; }
+.word .bk { font-weight: 200; color: var(--gold); }
+.word .h { font-weight: 900; letter-spacing: -.02em; }
+.word .dot { color: var(--gold); }
+.dots { display: flex; gap: 14px; }
+.dots i { width: 16px; height: 16px; border-radius: 50%; box-shadow: 0 0 14px currentColor; background: currentColor; }
+.headline { font-weight: 800; line-height: 1.02; letter-spacing: -.02em; }
+.headline em { font-style: normal; color: var(--gold); }
+.photo { position: absolute; border: 2px solid rgba(201,168,76,.35); box-shadow: 0 40px 80px rgba(0,0,0,.6); overflow: hidden; background: #000; }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.photo span { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 20px; background: linear-gradient(transparent, rgba(0,0,0,.85)); font-weight: 700; letter-spacing: .3em; font-size: 15px; color: var(--gold); text-transform: uppercase; }
+.glow { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .35; }
+.marquee { position: absolute; left: 0; right: 0; bottom: 0; height: 80px; border-top: 1px solid rgba(201,168,76,.25); display: flex; align-items: center; justify-content: center; gap: 18px; font-weight: 600; letter-spacing: .26em; font-size: 15px; color: var(--silver); text-transform: uppercase; white-space: nowrap; background: #020202; }
+.marquee b { color: var(--c1); font-weight: 400; }
+.url { font-weight: 700; letter-spacing: .12em; font-size: 26px; }
+.cta { display: inline-block; background: var(--gold); color: #060606; font-weight: 800; letter-spacing: .3em; text-transform: uppercase; font-size: 22px; padding: 24px 44px; }
+</style></head><body>
+
+<!-- 1 ─ Launch feed post 4:5 -->
+<section class="cv feed" id="haus-01-launch-feed">
+  <div class="spectrum"></div>
+  <div class="glow" style="width:600px;height:600px;background:var(--gold);right:-200px;top:300px"></div>
+  <div class="br tl"></div><div class="br tr"></div>
+  <div style="position:absolute;top:120px;left:100px;">
+    <div class="kicker">Something sacred is being built</div>
+    <div class="headline" style="font-size:84px;margin-top:34px;">Everything<br>you need<br>is already<br><em>in the HAUS.</em></div>
+    <div class="dots" style="margin-top:44px;"><i style="color:var(--c1)"></i><i style="color:var(--c2)"></i><i style="color:var(--c3)"></i><i style="color:var(--c4)"></i><i style="color:var(--c5)"></i><i style="color:var(--c6)"></i><i style="color:var(--c7)"></i></div>
+    <div style="margin-top:40px;font-weight:300;font-size:28px;line-height:1.6;color:var(--silver);max-width:470px;">Design. Glam. Jewelry.<br>Music. Ministry.<br>One door. Walk in.</div>
+  </div>
+    <div class="phone" style="width:400px;right:60px;top:260px;transform:rotate(5deg);"><img src="img/haus-mob.png"></div>
+  <div style="position:absolute;left:100px;bottom:150px;">
+    <div class="cta">Get your key</div>
+    <div class="url" style="margin-top:22px;color:var(--gold-lt)">enterTheHAUS.co</div>
+  </div>
+  <div class="marquee">Where God Leads <b>✦</b> Where Excellence Lives <b>✦</b> Where You Are Always Welcome</div>
+</section>
+
+<!-- 2 ─ Five Rooms feed post 4:5 -->
+<section class="cv feed" id="haus-02-five-rooms-feed">
+  <div class="spectrum"></div>
+  <div class="br tl"></div><div class="br tr"></div><div class="br bl"></div><div class="br brr"></div>
+  <div style="position:absolute;top:130px;left:0;right:0;text-align:center;">
+    <div class="kicker">God built you a whole</div>
+    <div class="word" style="font-size:170px;line-height:1;margin-top:60px;"><span class="the">the</span><span class="bk">[</span><span class="h">HAUS</span><span class="dot">.</span><span class="bk">]</span></div>
+  </div>
+  <div style="position:absolute;top:490px;left:110px;right:110px;">
+    <div style="font-weight:300;font-size:30px;color:var(--silver);margin-bottom:34px;">Five Rooms. One foundation. Walk in.</div>
+    <div class="rooms">
+      <div class="room" style="--c:#1A3C8F"><i></i><b>Haus of Vision</b><span>Design · Brand · Web</span></div>
+      <div class="room" style="--c:#C2185B"><i></i><b>LUSH: Haus of Glam</b><span>Serve God. Serve Face.</span></div>
+      <div class="room" style="--c:#89CFF0"><i></i><b>Haus of R. Nicole</b><span>Jewelry · Clickety-Clack</span></div>
+      <div class="room" style="--c:#6F00FF"><i></i><b>Haus Frequency</b><span>Spirit-led sound</span></div>
+      <div class="room" style="--c:#DC143C"><i></i><b>The Spicy Believer</b><span>The foundation</span></div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:95px;left:0;right:0;text-align:center;">
+    <div class="url" style="color:var(--gold-lt)">enterTheHAUS.co</div>
+  </div>
+  <style>
+    .room { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 24px; padding: 26px 0; border-top: 1px solid rgba(201,168,76,.22); }
+    .room:last-child { border-bottom: 1px solid rgba(201,168,76,.22); }
+    .room i { width: 22px; height: 22px; border-radius: 50%; background: var(--c); box-shadow: 0 0 22px var(--c); }
+    .room b { font-weight: 700; font-size: 40px; letter-spacing: -.01em; }
+    .room span { font-weight: 500; font-size: 19px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  </style>
+</section>
+
+<!-- 3 ─ Story 9:16 -->
+<section class="cv story" id="haus-03-join-list-story">
+  <div class="spectrum"></div>
+  <div class="glow" style="width:800px;height:800px;background:var(--gold);left:140px;top:560px;opacity:.22"></div>
+  <div class="br tl" style="top:120px"></div><div class="br tr" style="top:120px"></div><div class="br bl" style="bottom:120px"></div><div class="br brr" style="bottom:120px"></div>
+  <div style="position:absolute;top:210px;left:0;right:0;text-align:center;">
+    <div class="kicker">We've moved</div>
+    <div class="headline" style="font-size:96px;margin-top:30px;">The door<br><em>is open.</em></div>
+  </div>
+  <div class="photo" style="width:340px;height:480px;left:90px;top:640px;transform:rotate(-6deg);"><img src="../../assets/photo-1.jpg"><span>Creative Director</span></div>
+  <div class="photo" style="width:340px;height:480px;right:90px;top:700px;transform:rotate(5deg);"><img src="../../assets/photo-2.jpg"><span>Where God Leads</span></div>
+  <div class="phone" style="width:360px;left:360px;top:560px;z-index:2;"><img src="img/haus-mob.png"></div>
+  <div style="position:absolute;bottom:250px;left:0;right:0;text-align:center;">
+    <div style="font-weight:300;font-size:32px;color:var(--silver);line-height:1.5;margin-bottom:46px;">God didn't call you to search for pieces<br>of yourself in a hundred places.</div>
+    <div class="cta">Get your key — Join the list</div>
+    <div class="url" style="margin-top:30px;color:var(--gold-lt)">enterTheHAUS.co</div>
+  </div>
+</section>
+
+</body></html>
