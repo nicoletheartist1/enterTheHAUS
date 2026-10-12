@@ -1,0 +1,66 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="devices.css">
+<link rel="stylesheet" href="haus-base.css">
+<script src="rooms.js"></script>
+<style>
+.cv { background: #fff; color: var(--ink); }
+.x2 { width: 390px; transform: scale(2); transform-origin: top left; }
+.btn-gold { display: inline-block; border: 1px solid rgba(201,168,76,.45); padding: 13px 26px; font-size: 10px; letter-spacing: .3em; }
+.btn-grey { display: inline-block; border: 1px solid rgba(13,13,13,.15); padding: 13px 26px; font-size: 10px; letter-spacing: .3em; color: var(--grey); }
+</style></head><body>
+
+<!-- Desktop Hub: room grid with VISION hovered -->
+<section class="cv" id="screen-desktop" style="width:1440px;height:900px;">
+  <div style="height:120px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;border-bottom:1px solid rgba(13,13,13,.1);">
+    <div class="wordmark gold" style="font-size:54px;"><span class="the">the</span>HAUS.</div>
+    <div class="cap" style="font-size:11px;letter-spacing:.4em;font-weight:700;">Built to Empower, Equip, and Elevate — Everyone.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:2.4fr .53fr .53fr .53fr;height:780px;">
+    <div style="background:var(--vision);color:#fff;padding:56px 40px;display:flex;flex-direction:column;justify-content:space-between;">
+      <div>
+        <div class="cap" style="font-size:10px;letter-spacing:.35em;margin-bottom:24px;">01</div>
+        <div data-room-icon="vision|36|#FFFFFF" style="margin-bottom:24px;"></div>
+        <div class="seasons" style="font-size:84px;line-height:.92;margin-bottom:16px;">VISION</div>
+        <div class="cap" style="font-size:10px;letter-spacing:.28em;">Brand Design Studio</div>
+      </div>
+      <div style="max-width:560px;">
+        <p class="light" style="font-size:15px;line-height:1.75;opacity:.9;margin-bottom:26px;">Identity, web design, logos, strategy decks, SEO resource kits, and concept development. Built for the woman with a vision who's done waiting.</p>
+        <span class="cap" style="font-size:11px;letter-spacing:.3em;border-bottom:1px solid #fff;padding-bottom:3px;">Enter Room →</span>
+        <div class="cap" style="font-size:10px;letter-spacing:.24em;margin-top:16px;opacity:.75;text-decoration:underline;text-underline-offset:4px;">Flagship build: WHOLElistic ↗</div>
+      </div>
+    </div>
+    <div style="border-left:1px solid rgba(13,13,13,.1);padding:56px 22px;"><div class="cap" style="font-size:10px;letter-spacing:.35em;color:var(--taupe);margin-bottom:24px;">02</div><div class="seasons" style="writing-mode:vertical-rl;font-size:26px;letter-spacing:.05em;">GLAM</div></div>
+    <div style="border-left:1px solid rgba(13,13,13,.1);padding:56px 22px;"><div class="cap" style="font-size:10px;letter-spacing:.35em;color:var(--taupe);margin-bottom:24px;">03</div><div class="seasons" style="writing-mode:vertical-rl;font-size:26px;letter-spacing:.05em;">FREQUENCY</div></div>
+    <div style="border-left:1px solid rgba(13,13,13,.1);padding:56px 22px;"><div class="cap" style="font-size:10px;letter-spacing:.35em;color:var(--taupe);margin-bottom:24px;">04</div><div class="seasons" style="writing-mode:vertical-rl;font-size:26px;letter-spacing:.05em;">stillHER</div></div>
+  </div>
+</section>
+
+<!-- Mobile Hub hero -->
+<section class="cv" id="screen-mobile-hero" style="width:780px;height:1688px;">
+  <div class="x2" style="height:844px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;">
+    <div class="wordmark gold" style="font-size:96px;margin-bottom:34px;"><span class="the">the</span>HAUS.</div>
+    <div class="cap" style="font-size:9px;letter-spacing:.4em;font-weight:700;line-height:1.9;margin-bottom:18px;">Built to Empower, Equip,<br>and Elevate — Everyone.</div>
+    <div class="seasons" style="font-style:italic;color:var(--grey);font-size:15px;margin-bottom:36px;">God is the Founder. R. Nicole is the steward.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <span class="cap btn-gold"><span class="gold">Enter the HAUS ↓</span></span>
+      <span class="cap btn-grey">View Blueprint</span>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Hub rooms (stacked) -->
+<section class="cv" id="screen-mobile-rooms" style="width:780px;height:1688px;">
+  <div class="x2" id="mrooms" style="height:844px;display:flex;flex-direction:column;"></div>
+  <script>
+    document.getElementById('mrooms').innerHTML = ROOMS.map((r, i) => `
+      <div style="flex:1;padding:26px 24px;border-top:1px solid rgba(13,13,13,.1);${i === 3 ? `background:${r.color};color:${r.ink};` : ''}display:flex;flex-direction:column;justify-content:center;">
+        <div class="cap" style="font-size:9px;letter-spacing:.35em;color:${i === 3 ? r.ink : 'var(--taupe)'};margin-bottom:12px;">${r.num}</div>
+        <div style="margin-bottom:12px;">${roomIcon(r.id, 26, i === 3 ? r.ink : r.color, i === 3 ? '#fff' : undefined)}</div>
+        <div class="seasons" style="font-size:40px;line-height:.92;margin-bottom:8px;">${r.name}</div>
+        <div class="cap" style="font-size:9px;letter-spacing:.28em;color:${i === 3 ? r.ink : 'var(--taupe)'};">${r.sub}</div>
+      </div>`).join('');
+  </script>
+</section>
+
+</body></html>

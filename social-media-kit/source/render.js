@@ -3,7 +3,7 @@ const path = require('path');
 (async () => {
   const b = await chromium.launch();
   for (const f of process.argv.slice(3)) {
-    const pg = await b.newPage({ viewport: { width: 1200, height: 2000 } });
+    const pg = await b.newPage({ viewport: { width: 1600, height: 2000 } });
     await pg.goto('file://' + path.resolve(f)); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(800);
     for (const el of await pg.$$('.cv')) {
       const id = await el.getAttribute('id');
