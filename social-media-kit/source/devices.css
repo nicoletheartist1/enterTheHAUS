@@ -1,0 +1,30 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #555; display: flex; flex-direction: column; gap: 40px; padding: 40px; align-items: flex-start; }
+.cv { position: relative; overflow: hidden; flex-shrink: 0; }
+.sq { width: 1080px; height: 1080px; }
+.feed { width: 1080px; height: 1350px; }
+.story { width: 1080px; height: 1920px; }
+
+/* ── Laptop ── */
+.laptop { position: absolute; }
+.laptop .lid {
+  background: #0d0d10; border-radius: 22px 22px 0 0; padding: 16px 16px 22px;
+  box-shadow: 0 0 0 2px #2a2a30 inset, 0 40px 90px rgba(0,0,0,.45);
+  position: relative;
+}
+.laptop .lid::before { content: ''; position: absolute; top: 6px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #2c2c34; }
+.laptop .lid img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; border-radius: 4px; }
+.laptop .base {
+  height: 22px; margin: 0 -7%; border-radius: 0 0 18px 18px;
+  background: linear-gradient(#e4e4e8, #a7a7ae 70%, #7d7d84);
+  position: relative; box-shadow: 0 30px 50px rgba(0,0,0,.35);
+}
+.laptop .base::before { content: ''; position: absolute; top: 0; left: 50%; width: 16%; height: 9px; margin-left: -8%; border-radius: 0 0 10px 10px; background: #9a9aa1; }
+
+/* ── Phone ── */
+.phone {
+  position: absolute; background: #0b0b0d; border-radius: 64px; padding: 14px;
+  box-shadow: 0 0 0 2px #34343c, 0 0 0 5px #121215, 0 50px 100px rgba(0,0,0,.5);
+}
+.phone img { display: block; width: 100%; aspect-ratio: 780/1688; object-fit: cover; object-position: top; border-radius: 50px; }
+.phone::after { content: ''; position: absolute; top: 30px; left: 50%; width: 30%; height: 34px; margin-left: -15%; border-radius: 20px; background: #000; }

@@ -1,0 +1,16 @@
+/* theHAUS. — tokens lifted from the live Hub (Current HAUS Site / artifacts/the-haus) */
+@font-face { font-family: 'Seasons'; src: url(fonts/seasons.ttf); }
+@font-face { font-family: 'Agrandir'; src: url(fonts/agrandir.otf); }
+@font-face { font-family: 'AgrandirLight'; src: url(fonts/agrandir-light.otf); }
+:root {
+  --ink: #0D0D0D; --grey: #757575; --taupe: #6E6248; --sand: #B0A588; --beige: #D4B896; --gold: #C9A84C;
+  --gold-grad: linear-gradient(135deg,#FFEB87 0%,#CC9900 25%,#824E00 50%,#FFC900 75%,#825900 100%);
+  --vision: #1A3C8F; --glam: #C2185B; --glam-ink: #C1FF1A; --freq: #6F00FF; --still: #7B2D5E; --still-ink: #89CFF0;
+}
+.gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.seasons { font-family: 'Seasons', serif; font-weight: 400; }
+.cap { font-family: 'Agrandir', sans-serif; text-transform: uppercase; }
+.light { font-family: 'AgrandirLight', 'Agrandir', sans-serif; }
+/* Wordmark stand-in for the gold logo file */
+.wordmark { font-family: 'Seasons', serif; line-height: .9; letter-spacing: -.02em; white-space: nowrap; filter: drop-shadow(0 4px 32px rgba(201,168,76,.22)); }
+.wordmark .the { font-style: italic; font-size: .42em; margin-right: .06em; }

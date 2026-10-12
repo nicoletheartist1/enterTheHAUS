@@ -1,0 +1,95 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="devices.css">
+<link rel="stylesheet" href="haus-base.css">
+<script src="rooms.js"></script>
+<style>
+.cv { background: #fff; color: var(--ink); }
+.rule { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,.6), transparent); }
+.eyebrow { font-family: 'Agrandir', sans-serif; text-transform: uppercase; letter-spacing: .42em; font-size: 19px; font-weight: 700; }
+.url { font-family: 'Agrandir', sans-serif; letter-spacing: .3em; text-transform: uppercase; font-size: 19px; }
+.goldbtn { display: inline-block; border: 2px solid rgba(201,168,76,.55); padding: 26px 50px; font-family: 'Agrandir', sans-serif; text-transform: uppercase; letter-spacing: .3em; font-size: 20px; font-weight: 700; }
+.slide { color: var(--ink); display: flex; flex-direction: column; justify-content: space-between; padding: 96px 90px; }
+</style></head><body>
+
+<!-- 01 ─ The Four Rooms (4:5) -->
+<section class="cv feed" id="haus-01-four-rooms-feed">
+  <div style="position:absolute;top:80px;left:0;right:0;text-align:center;">
+    <div class="wordmark gold" style="font-size:150px;"><span class="the">the</span>HAUS.</div>
+    <div class="eyebrow" style="margin-top:34px;font-size:16px;">Built to Empower, Equip, and Elevate — Everyone.</div>
+  </div>
+  <div id="grid4" style="position:absolute;left:0;right:0;top:400px;bottom:150px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(13,13,13,.1);border-bottom:1px solid rgba(13,13,13,.1);"></div>
+  <div style="position:absolute;left:0;right:0;bottom:56px;text-align:center;">
+    <div class="seasons" style="font-style:italic;font-size:32px;color:var(--grey);">God is the Founder. R. Nicole is the steward.</div>
+  </div>
+  <script>
+    document.getElementById('grid4').innerHTML = ROOMS.map((r, i) => `
+      <div style="background:${r.color};color:${r.ink};padding:46px 28px;display:flex;flex-direction:column;justify-content:space-between;${i ? 'border-left:1px solid rgba(255,255,255,.12);' : ''}">
+        <div>
+          <div class="cap" style="font-size:15px;letter-spacing:.35em;margin-bottom:30px;">${r.num}</div>
+          ${roomIcon(r.id, 48, r.ink, r.id === 'stillher' ? '#FFFFFF' : undefined)}
+        </div>
+        <div>
+          <div class="seasons" style="font-size:${r.name.length > 7 ? 37 : 52}px;line-height:.92;margin-bottom:16px;">${r.name}</div>
+          <div class="cap" style="font-size:12px;letter-spacing:.22em;line-height:1.6;">${r.sub}</div>
+        </div>
+      </div>`).join('');
+  </script>
+</section>
+
+<!-- 02 ─ Site mockup (4:5) -->
+<section class="cv feed" id="haus-02-site-mockup-feed" style="background:#0D0D0D;color:#fff;">
+  <div style="position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle, rgba(201,168,76,.22), transparent 65%);left:190px;top:420px;"></div>
+  <div style="position:absolute;top:90px;left:90px;right:90px;">
+    <div class="eyebrow gold" style="font-size:17px;">enterthehaus.co</div>
+    <div class="seasons" style="font-style:italic;font-size:76px;line-height:1.06;margin-top:26px;">This is where vision<br>becomes something<br>you can touch.</div>
+  </div>
+  <div class="laptop" style="width:820px;left:60px;top:600px;"><div class="lid"><img src="img/screen-desktop.png"></div><div class="base"></div></div>
+  <div class="phone" style="width:250px;right:60px;top:560px;transform:rotate(4deg);border-radius:46px;padding:10px;"><img src="img/screen-mobile-hero.png" style="border-radius:36px"></div>
+  <div style="position:absolute;bottom:80px;left:90px;right:90px;display:flex;justify-content:space-between;align-items:center;">
+    <div class="cap" id="roomrow" style="display:flex;gap:26px;font-size:15px;letter-spacing:.3em;color:var(--sand);"></div>
+    <div class="cap gold" style="font-size:15px;letter-spacing:.3em;font-weight:700;">Enter the HAUS →</div>
+  </div>
+  <script>document.getElementById('roomrow').innerHTML = ROOMS.map(r => `<span>${r.name}</span>`).join('');</script>
+</section>
+
+<!-- 03–06 ─ Room carousel slides (4:5), filled from ROOMS -->
+<div id="slides" style="display:contents"></div>
+<script>
+  document.getElementById('slides').innerHTML = ROOMS.map((r, i) => `
+  <section class="cv feed slide" id="haus-0${i + 3}-room-${r.id}" style="background:${r.color};color:${r.ink};">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+      <div>
+        <div class="cap" style="font-size:20px;letter-spacing:.4em;">Room ${r.num} / 04</div>
+      </div>
+      <div class="wordmark" style="font-size:52px;color:${r.ink};filter:none;"><span class="the">the</span>HAUS.</div>
+    </div>
+    <div>
+      ${roomIcon(r.id, 120, r.ink, r.id === 'stillher' ? '#FFFFFF' : undefined)}
+      <div class="seasons" style="font-size:${r.name.length > 7 ? 150 : 190}px;line-height:.9;margin-top:40px;letter-spacing:-.01em;">${r.name}</div>
+      <div class="cap" style="font-size:22px;letter-spacing:.3em;margin-top:26px;">${r.sub}</div>
+      <div style="height:2px;width:90px;background:currentColor;opacity:.5;margin:48px 0;"></div>
+      <p class="light" style="font-size:34px;line-height:1.55;max-width:860px;opacity:.95;">${r.desc}</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+      <span class="cap" style="font-size:22px;letter-spacing:.3em;border-bottom:2px solid currentColor;padding-bottom:6px;">Enter Room →</span>
+      <span class="cap" style="font-size:18px;letter-spacing:.2em;opacity:.85;">${r.url}</span>
+    </div>
+  </section>`).join('');
+</script>
+
+<!-- 07 ─ Story (9:16) -->
+<section class="cv story" id="haus-07-enter-story">
+  <div style="position:absolute;top:170px;left:0;right:0;text-align:center;">
+    <div class="wordmark gold" style="font-size:170px;"><span class="the">the</span>HAUS.</div>
+    <div class="eyebrow" style="margin-top:40px;font-size:17px;line-height:1.9;">Built to Empower, Equip,<br>and Elevate — Everyone.</div>
+  </div>
+  <div class="phone" style="width:360px;left:360px;top:520px;"><img src="img/screen-mobile-rooms.png"></div>
+  <div style="position:absolute;bottom:200px;left:0;right:0;text-align:center;">
+    <div class="seasons" style="font-style:italic;font-size:38px;color:var(--grey);margin-bottom:46px;">Four rooms. One Founder. Walk in.</div>
+    <div class="goldbtn"><span class="gold">Enter the HAUS ↓</span></div>
+    <div class="url" style="margin-top:34px;color:var(--taupe);">enterthehaus.co</div>
+  </div>
+</section>
+
+</body></html>
